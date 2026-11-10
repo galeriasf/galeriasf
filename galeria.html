@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galeria de álbuns — Capela Santa Clara | Uberaba/MG</title>
+<meta name="description" content="Galeria da Capela Santa Clara organizada em álbuns: Festas de Santa Clara, Semana Santa, Natal, Corpus Christi, Primeira Eucaristia, Crisma, Batizados, Casamentos e mais.">
+<meta name="theme-color" content="#3B2718">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="conteudo">
+
+  <header class="pagina-topo">
+    <div class="container">
+      <nav class="trilha" aria-label="Você está em" id="trilha-galeria">
+        <a href="index.html">Início</a> <span>/</span> <span>Galeria</span>
+      </nav>
+      <h1 id="titulo-galeria">Galeria de álbuns</h1>
+      <div class="ornamento" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3v18M7.5 8h9"/></svg></div>
+      <p id="descricao-galeria">As fotografias da comunidade são organizadas em álbuns. Escolha um álbum para ver somente as suas imagens. As fotografias oficiais serão publicadas com autorização; até lá, cada álbum indica o espaço reservado.</p>
+    </div>
+  </header>
+
+  <!-- VISÃO: ÁLBUNS -->
+  <section class="secao" id="visao-albuns">
+    <div class="container">
+      <div class="barra-ferramentas">
+        <div class="campo campo-busca">
+          <label class="somente-leitor" for="busca-albuns">Buscar álbum</label>
+          <svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M15.8 15.8L21 21"/></svg>
+          <input type="search" id="busca-albuns" placeholder="Buscar álbum por título ou tema…">
+        </div>
+        <div class="campo">
+          <label for="filtro-albuns">Situação</label>
+          <select id="filtro-albuns">
+            <option value="">Todos os álbuns</option>
+            <option value="com">Com fotografias publicadas</option>
+            <option value="sem">Aguardando fotografias</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="ordem-albuns">Ordenar</label>
+          <select id="ordem-albuns">
+            <option value="tema">Ordem temática</option>
+            <option value="az">Título (A–Z)</option>
+            <option value="fotos">Mais fotografias</option>
+          </select>
+        </div>
+      </div>
+      <p class="contador-resultados" id="contador-albuns" aria-live="polite"></p>
+      <div class="grade grade--3" id="grade-albuns"></div>
+
+      <div class="caixa caixa--info mt-4">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3.5 7.5h4l1.5-2.5h6l1.5 2.5h4v12h-17z"/><circle cx="12" cy="13.2" r="3.6"/></svg>
+        <div>
+          <strong>Como enviar fotografias para os álbuns</strong>
+          Salve em <strong>JPG</strong>, com nomes descritivos sem espaços ou acentos, na pasta do álbum correspondente em <code>assets/img/galeria/</code>. Informe legenda, data aproximada e se há autorização de imagem das pessoas retratadas. Fotografias de crianças exigem autorização dos responsáveis.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISÃO: ÁLBUM ABERTO -->
+  <section class="secao" id="visao-album" hidden>
+    <div class="container">
+      <div class="flex flex--entre mb-2">
+        <button class="btn btn--contorno" type="button" id="voltar-galeria">
+          <svg class="ico ico--p" viewBox="0 0 24 24"><path d="M19.5 12h-15M10.5 6l-6 6 6 6"/></svg>Voltar à galeria
+        </button>
+        <span class="meta" id="info-album"></span>
+      </div>
+      <div id="conteudo-album"></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/js/dados.js"></script>
+<script src="script.js"></script>
+<script src="assets/js/visualizador.js"></script>
+<script src="galeria.js"></script>
+</body>
+</html>
